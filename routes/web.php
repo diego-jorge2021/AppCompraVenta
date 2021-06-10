@@ -9,9 +9,6 @@ use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['guest'])->group(function () {
-    // Route::get('/', function () {
-    //     return redirect('principal');
-    // });
     Route::get('/', function () {
         return redirect('/login');
     });
@@ -33,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
 
     //Rutas de gestion de usuarios
     Route::get('/usuarios', [UsuarioController::class, 'index']);
-    //Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-    //Route::post('/register', [RegisterController::class, 'register']);
 });
+
+//Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+//Route::post('/register', [RegisterController::class, 'register']);
